@@ -11,7 +11,7 @@ $(document).ready(function(){   //Creates document for JS functions
     $('#currentDay').append(now);
 
     function storedData() {
-        $(".row").each(function () {
+        $(".time-block").each(function () {
             var textInput = $(this).attr("id");   //Retrieves the local storage data and displays within appropriate text area.
             var savedInput = localStorage.getItem(textInput);
 
@@ -26,18 +26,18 @@ $(document).ready(function(){   //Creates document for JS functions
 
     function timedChange() {
 
-        var thisMoment = moment().hour(); 
-        $(".row").each(function () {
-            var scheduledMoment = parseInt($(this).attr("id").split("hour")[1]);
+        var currentTime = moment().hour(); 
+        $(".time-block").each(function () {
+            var workDay = parseInt($(this).attr("id").split("hour")[1]);   //Function to determine the time of day.
 
 
 
-            if (scheduledMoment < thisMoment) {
+            if (workDay < currentTime) {
                 $(this).addClass("past");
-                $(this).removeClass("future");
+                $(this).removeClass("future");   //Variance formula which alters depending on workday hour index.
                 $(this).removeClass("present");
             }
-            else if (scheduledMoment === thisMoment) {
+            else if (workDay === currentTime) {
                 $(this).removeClass("past");
                 $(this).addClass("present");
                 $(this).removeClass("future");
