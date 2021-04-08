@@ -28,24 +28,22 @@ $(document).ready(function(){   //Creates document for JS functions
 
         var currentTime = moment().hour(); 
         $(".time-block").each(function () {
-            var workDay = parseInt($(this).attr("id").split("hour")[1]);   //Function to determine the time of day.
+            var hour = parseInt($(this).attr("id"));   //Function to determine the time of day.
 
 
 
-            if (workDay < currentTime) {
-                $(this).addClass("past");
-                $(this).removeClass("future");   //Variance formula which alters depending on workday hour index.
-                $(this).removeClass("present");
+            if (hour < currentTime) {
+                $(this).children(".description").addClass("past");      //Variance formula which alters depending on hour hour index.
+
             }
-            else if (workDay === currentTime) {
-                $(this).removeClass("past");
-                $(this).addClass("present");
-                $(this).removeClass("future");
+            else if (hour === currentTime) {
+ 
+                $(this).children(".description").addClass("present");
+
             }
             else {
-                $(this).removeClass("present");
-                $(this).removeClass("past");
-                $(this).addClass("future");
+
+                $(this).children(".description").addClass("future");
             }
         })
     }

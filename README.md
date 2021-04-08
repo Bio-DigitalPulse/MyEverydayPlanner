@@ -20,9 +20,6 @@ To visit the Github repository for this page, follow this link:
 https://ascendedkrishna.github.io/MyEverydayPlanner/
 
 A screenshot of this application can be found by following this link:
-<<<<<<< HEAD
 ![Work Day Schedul](https://user-images.githubusercontent.com/77505291/113891934-873f6e80-9793-11eb-8a98-680cb3984c3a.png)
-=======
->>>>>>> fa14b93c258b3620ecb49c0fe2fac9cc149eac70
 
 
